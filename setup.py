@@ -165,7 +165,7 @@ setup(
         ],
     },
     console=[{"script": "scripts/sample.py"}],
-    options={"py2exe": {"packages": ["sample"]}},
+    options={"py2exe": {"packages": []}},
     # List additional URLs that are relevant to your project as a dict.
     #
     # This field corresponds to the "Project-URL" metadata fields:
