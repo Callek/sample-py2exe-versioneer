@@ -23,3 +23,7 @@ jobs:
       run: python -m pip install -U setuptools py2exe
     - name: Build
       run: python setup.py py2exe
+    - uses: actions/upload-artifact@v3
+      with:
+        name: dist
+        path: dist/
