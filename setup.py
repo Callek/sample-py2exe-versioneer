@@ -8,6 +8,7 @@ https://github.com/pypa/sampleproject
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
 import pathlib
+import py2exe
 
 here = pathlib.Path(__file__).parent.resolve()
 
@@ -163,6 +164,8 @@ setup(
             "sample=sample:main",
         ],
     },
+    console=[{"script": "scripts/sample.py"}],
+    options={"py2exe": {"packages": ["sample"]}},
     # List additional URLs that are relevant to your project as a dict.
     #
     # This field corresponds to the "Project-URL" metadata fields:
