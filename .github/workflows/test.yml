@@ -12,6 +12,7 @@ jobs:
         python: [3]
         platform: [windows-latest]
         py2exe: ['legacy', 'freeze']
+      fail-fast: false
     runs-on: ${{ matrix.platform }}
     steps:
     - name: Checkout
@@ -27,7 +28,8 @@ jobs:
       if: matrix.py2exe == 'legacy'
     - name: Install py2exe from GitHub artifacts
       run: |
-        curl.exe --output py2exe-0.12.0.0-cp310-cp310-win_amd64.whl https://github.com/py2exe/py2exe/suites/8163355697/artifacts/354561913
+        curl.exe --output bundle.zip https://github.com/py2exe/py2exe/suites/8163355697/artifacts/354561913
+        tar -xf bundle.zip
         python -m pip install py2exe-0.12.0.0-cp310-cp310-win_amd64.whl
         rm py2exe.whl
       if: matrix.py2exe == 'freeze'
