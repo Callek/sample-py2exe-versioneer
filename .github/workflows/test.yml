@@ -20,12 +20,13 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python }}
-    - name: Install test dependencies
-      run: python -m pip install -U setuptools versioneer $env:PY2EXE
+    - name: Install build dependencies
+      run: python -m pip install -U setuptools versioneer wheel $env:PY2EXE
+    - name: Install py2exe
+      run: python -m pip install $env:PY2EXE
       env:
         PY2EXE: ${{ matrix.py2exe }}
-    - name: Build
-      run: python setup.py py2exe
+    - run: python setup.py py2exe
     - uses: actions/upload-artifact@v3
       with:
         name: dist
