@@ -8,7 +8,11 @@ https://github.com/pypa/sampleproject
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
 import pathlib
-import py2exe
+import versioneer
+try:
+    import py2exe
+except ImportError:
+    print("Can't find py2exe, will not be able to run py2exe")
 
 here = pathlib.Path(__file__).parent.resolve()
 
@@ -37,7 +41,8 @@ setup(
     # For a discussion on single-sourcing the version across setup.py and the
     # project code, see
     # https://packaging.python.org/guides/single-sourcing-package-version/
-    version="2.0.0",  # Required
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
