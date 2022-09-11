@@ -35,5 +35,5 @@ setup(
         ],
     },
     console=[{"script": "scripts/sample.py"}],
-    options={"py2exe": {"packages": ["sample"]}},
+    options={"py2exe": {"includes": ["sample"]}},
 )
