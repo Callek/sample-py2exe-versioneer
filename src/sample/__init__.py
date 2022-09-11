@@ -3,4 +3,4 @@ __version__ = _version.get_versions()['version']
 
 def main():
     """Entry point for the application script"""
-    print("Call your main application code here")
+    print(f"Sample v{__version__}")
