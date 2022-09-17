@@ -38,6 +38,6 @@ jobs:
       if: matrix.py2exe == 'freeze'
     - uses: actions/upload-artifact@v3
       with:
-        name: dist
-        path: dist/
+        name: ${{ matrix.py2exe }}
+        path: dist/sample.exe
     - run: dist/sample.exe
