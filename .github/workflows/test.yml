@@ -32,6 +32,8 @@ jobs:
       run: |
         python -m pip install tools/py2exe-0.12.0.0-cp310-cp310-win_amd64.whl
       if: matrix.py2exe == 'freeze'
+    - name: Install package into local environment
+      run: python -m pip install .
     - run: python setup.py py2exe
       if: matrix.py2exe == 'legacy'
     - run: python build_exe.py
