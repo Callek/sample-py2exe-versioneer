@@ -26,8 +26,7 @@ setup(
     name="sampleproject",
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    package_dir={"": "src"},
-    packages=find_packages(where="src"),  # Required
+    packages=find_packages(),  # Required
     python_requires=">=3.7, <4",
     entry_points={  # Optional
         "console_scripts": [
