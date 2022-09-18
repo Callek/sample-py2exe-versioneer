@@ -46,7 +46,7 @@ def get_config():
     cfg.style = "pep440"
     cfg.tag_prefix = ""
     cfg.parentdir_prefix = "None"
-    cfg.versionfile_source = "sample/_version.py"
+    cfg.versionfile_source = "src/sample/_version.py"
     cfg.verbose = False
     return cfg
 
